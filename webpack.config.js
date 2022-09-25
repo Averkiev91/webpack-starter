@@ -17,6 +17,13 @@ module.exports = {
             new TerserPlugin()
         ]
     },
+    devServer: {
+        static : {
+            directory: path.join(__dirname, 'dist')
+        },
+        compress: true,
+        port: 9999
+    },
     plugins: [
         new HtmlWebpackPlugin(
             {
