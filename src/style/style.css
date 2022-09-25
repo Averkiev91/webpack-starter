@@ -1,0 +1,17 @@
+@import "libs/normalize.css";
+@import "_vars.css";
+@import "_fonts.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("../img/colorful.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    object-fit: cover;
+}

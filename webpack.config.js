@@ -3,13 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const TerserPlugin = require('terser-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-    entry: ["@babel/polyfill", "./src/js/index.js"],
+    entry: ["@babel/polyfill", "./src/script/script.js"],
     output: {
-        filename: "index.js",
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
+        filename: "script.js",
+        assetModuleFilename: "img/[name][ext]"
     },
     devServer: {
         static : {
@@ -31,17 +32,6 @@ module.exports = {
                 filename: "style.css",
             }
         ),
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: "src/img",
-                    to: "img",
-                    globOptions: {
-                        ignore: ['*.DS_Store'],
-                    },
-                },
-            ],
-        })
     ],
     optimization: {
         minimize: true,
@@ -52,20 +42,21 @@ module.exports = {
     },
     module: {
         rules: [
-            // Styles: Inject CSS into the head with source maps
             {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
-            // Images: Copy image files to build folder
             {
-                test: /\.(gif|png|jpe?g|svg)$/i
+                test: /\.html$/i,
+                loader: "html-loader",
             },
-            // Fonts and SVGs: Inline files
             {
-                test: /\.(ttf|eot|svg|woff2?)$/i
+                test: /\.woff2?$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name][ext]'
+                }
             },
-            // JavaScript: Use Babel to transpile JavaScript files
             {
                 test: /\.m?js$/,
                 exclude: /node_modules/,
@@ -75,6 +66,33 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.(jpe?g|png|webp|gif|svg)$/i,
+                use: [
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                            },
+                            optipng: {
+                                enabled: false,
+                            },
+                            pngquant: {
+                                quality: [0.65, 0.90],
+                                speed: 4
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            webp: {
+                                quality: 75
+                            },
+                        }
+                    }
+                ],
+                type: 'asset/resource',
             }
         ]
     }
