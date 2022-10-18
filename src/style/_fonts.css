@@ -1,5 +1,14 @@
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/montserrat-v23-latin_cyrillic-700.woff2') format('woff2'),
-    url('../fonts/montserrat-v23-latin_cyrillic-700.woff') format('woff');
+    font-family: 'Roboto Light';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/Roboto-Light.woff2') format('woff2'),
+    url('../fonts/Roboto-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Roboto Bold';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/Roboto-Bold.woff2') format('woff2'),
+    url('../fonts/Roboto-Bold.woff') format('woff');
 }
