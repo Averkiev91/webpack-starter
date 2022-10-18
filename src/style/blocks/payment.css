@@ -1,0 +1,11 @@
+.payment {
+    background-color: var(--white);
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+.info-list {
+    max-width: 900px;
+}
+.info-list__item::marker {
+    color: var(--red);
+}

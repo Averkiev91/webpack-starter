@@ -4,10 +4,14 @@
 @import "base.css";
 @import "blocks.css";
 
-* {
+html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+*, *:after, *:before {
+    box-sizing: inherit;
 }
 
 body {
@@ -17,7 +21,17 @@ body {
     font-size: 18px;
     line-height: 21px;
 
-    /* text_darkgrey */
+    color: var(--darkgrey);
+}
 
-    color: #131718;
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+button {
+    padding: 0;
+    border: none;
+    cursor: pointer;
 }
