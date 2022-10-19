@@ -33,46 +33,88 @@
                 <div class="payment__direction direction">
                     <ul class="direction__list list-reset">
                         <li class="direction__col">
-                            <h6 class="direction__title">СКАЧАЙТЕ И ЗАПОЛНИТЕ<span>два файла с заявлением на апелляцию</span></h6>
-                            <div class="direction__download download">
-                                <button class="download__file-btn">
-                                    <a class="download__file-btn-link" href="#">
-                                        <img src="./img/Arrow.png" alt="Download">
-                                    </a>
-                                </button>
-                                <div class="download__img">
-                                    <img src="./img/Group1.png" alt="one">
+                            <div class="direction__text-wrapper">
+                                <h6 class="direction__title">СКАЧАЙТЕ И ЗАПОЛНИТЕ</h6>
+                                <p class="direction__text">два файла с заявлением на апелляцию</p>
+                            </div>
+                            <div class="direction__col-group">
+                                <div class="direction__download download">
+                                    <div class="download__file-btn">
+                                        <a class="download__file-btn-link" href="#">
+                                            <img src="./img/Arrow.png" alt="Download">
+                                        </a>
+                                    </div>
+                                    <div class="download__img">
+                                        <img src="./img/Group1.png" alt="one">
+                                    </div>
+                                    <a href="#" class="download__file-link">Скачать</a>
                                 </div>
-                                <a href="#" class="download__file-link">Скачать</a>
+                                <div class="direction__download download">
+                                    <div class="download__file-btn">
+                                        <a class="download__file-btn-link" href="#">
+                                            <img src="./img/Arrow.png" alt="Download">
+                                        </a>
+                                    </div>
+                                    <div class="download__img">
+                                        <img src="./img/Group2.png" alt="two">
+                                    </div>
+                                    <a href="#" class="download__file-link">Скачать</a>
+                                </div>
                             </div>
                         </li>
                         <li class="direction__col">
-                            <h6 class="direction__title">СКАЧАЙТЕ И ЗАПОЛНИТЕ<span>два файла с заявлением на апелляцию</span></h6>
-                            <div class="direction__download download">
-                                <button class="download__file-btn">
-                                    <a class="download__file-btn-link" href="#">
-                                        <img src="./img/Arrow.png" alt="Download">
-                                    </a>
-                                </button>
-                                <div class="download__img">
-                                    <img src="./img/Group1.png" alt="one">
+                            <div class="direction__text-wrapper">
+                                <h6 class="direction__title">ОТСКАНИРУЙТЕ И ЗАГРУЗИТЕ</h6>
+                                <p class="direction__text">заполненные заявления</p>
+                            </div>
+                            <div class="direction__col-group">
+                                <div class="direction__download download input">
+                                    <div class="download__file-btn input__file-btn">
+                                        <input name="file" type="file" id="input__file-1" class="input__file" multiple="">
+                                        <label for="input__file-1" class="input__file-button">
+                                            <span class="input__file-icon-wrapper">
+                                                <img class="input__file-icon" src="./img/add.png" alt="Выбрать файл">
+                                                <img class="input__file-icon-pencil" src="./img/pencil.png" alt="Измените файл">
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="input__img-group">
+                                        <div class="input__img">
+                                            <img src="img/one.png" alt="one">
+                                        </div>
+                                        <div class="input__success">
+                                            <img src="img/chek.png" alt="success">
+                                        </div>
+                                    </div>
                                 </div>
-                                <a href="#" class="download__file-link">Скачать</a>
+                                <div class="direction__download download input">
+                                    <div class="download__file-btn input__file-btn">
+                                        <input name="file" type="file" id="input__file-2" class="input__file" multiple="">
+                                        <label for="input__file-2" class="input__file-button">
+                                            <span class="input__file-icon-wrapper">
+                                                <img class="input__file-icon" src="./img/add.png" alt="Выбрать файл">
+                                                <img class="input__file-icon-pencil" src="./img/pencil.png" alt="Измените файл">
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="input__img-group">
+                                        <div class="input__img">
+                                            <img src="img/two.png" alt="two">
+                                        </div>
+                                        <div class="input__success">
+                                            <img src="img/chek.png" alt="success">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </li>
-                        <li class="direction__col">
-                            <h6 class="direction__title">СКАЧАЙТЕ И ЗАПОЛНИТЕ<span>два файла с заявлением на апелляцию</span></h6>
-                            <div class="direction__download download">
-                                <button class="download__file-btn">
-                                    <a class="download__file-btn-link" href="#">
-                                        <img src="./img/Arrow.png" alt="Download">
-                                    </a>
-                                </button>
-                                <div class="download__img">
-                                    <img src="./img/Group1.png" alt="one">
-                                </div>
-                                <a href="#" class="download__file-link">Скачать</a>
+                        <li class="direction__col appeal">
+                            <div class="direction__text-wrapper">
+                                <h6 class="direction__title">ОПЛАТИТЕ</h6>
+                                <p class="direction__text">подачу апелляции</p>
+                                <p class="appeal__text">Стоимость апелляции - <span class="appeal__value">7700</span> <span class="appeal__valuta">₽</span></p>
                             </div>
+                            <button class="appeal__btn direction__btn">Оплата апелляции</button>
                         </li>
                     </ul>
                 </div>
