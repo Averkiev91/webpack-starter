@@ -1,5 +1,28 @@
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/montserrat-v23-latin_cyrillic-700.woff2') format('woff2'),
-    url('../fonts/montserrat-v23-latin_cyrillic-700.woff') format('woff');
+    font-family: "Ubuntu";
+    src: url("../fonts/UbuntuRegular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Ubuntu";
+    src: url("../fonts/UbuntuBold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/LatoBold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../fonts/LatoBlack.woff2") format("woff2");
+    font-weight: 900;
+    font-display: swap;
+    font-style: normal;
 }
