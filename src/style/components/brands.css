@@ -1,0 +1,38 @@
+.brands {
+    position: relative;
+    width: 100%;
+    padding-bottom: 80px;
+}
+
+.brands:before {
+    content: "";
+    position: absolute;
+    top: calc(-50% - 50px);
+    left: 0;
+    background-image: url("../../img/brands-bg.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+}
+
+.brands__absolute {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+}
+
+.brands__items {
+    background-color: var(--color-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.brands__item:not(:last-child) {
+    margin-right: 25px;
+}
