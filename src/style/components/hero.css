@@ -1,0 +1,138 @@
+.hero__content {
+    max-width: 590px;
+}
+.hero__next {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    z-index: 30;
+    background-color: var(--color-light);
+    transform: translateY(-50%);
+}
+.hero__prev {
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    z-index: 30;
+    background-color: var(--color-light);
+    transform: translateY(-50%);
+}
+.hero__pag {
+    counter-reset: pag;
+    left: calc((100% - 1260px) / 2) !important;
+    bottom: 120px !important;
+    display: flex;
+}
+.hero__pag .swiper-pagination-bullet {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    width: 178px;
+    height: auto;
+    text-align: left;
+    background-color: transparent;
+    opacity: 1;
+}
+.hero__pag .swiper-pagination-bullet::before {
+    counter-increment: pag;
+    content: "0" counter(pag);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    color: rgba(255, 255, 255, 0.3);
+    transition: color 0.3s ease-in-out;
+}
+.hero__pag .swiper-pagination-bullet::after {
+    display: none;
+}
+.hero__bar {
+    position: relative;
+    overflow: hidden;
+    border-radius: 100px;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.hero__bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-light);
+    transform: scaleX(0);
+    transform-origin: left;
+}
+.hero__btns .btn:not(:last-child) {
+    margin-right: 20px;
+}
+.swiper-pagination-bullet-active::before {
+    color: var(--color-light) !important;
+}
+.swiper-pagination-bullet-active .hero__bar::after {
+    transform: scaleX(1);
+    transition: transform var(--hero-slider-speed) ease-in-out;
+}
+
+.hero-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.hero-slide {
+    padding-top: 220px;
+    padding-bottom: 354px;
+    background-image: url("../../img/sx-introbar-agricultural-vehicles_w960.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--color-gray);
+}
+
+.slider-nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 15;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.slider-nav__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+    color: var(--color-gray);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.slider-nav__btn svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    color: inherit;
+    fill: currentColor;
+    object-fit: cover;
+}
+.slider-nav__btn:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+.slider-nav__btn:hover {
+    color: var(--color-light);
+    background-color: var(--color-primary);
+}
+.slider-nav__btn:active {
+    color: var(--color-light);
+    background-color: var(--color-active);
+}
+
+.slider-nav__btn.swiper-button-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
