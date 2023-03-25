@@ -1,13 +1,14 @@
 .brands {
     position: relative;
     width: 100%;
+    min-height: 250px;
     padding-bottom: 80px;
 }
 
 .brands:before {
     content: "";
     position: absolute;
-    top: calc(-50% - 50px);
+    top: 0;
     left: 0;
     background-image: url("../../img/brands-bg.jpg");
     background-position: center;
@@ -20,7 +21,7 @@
 .brands__absolute {
     position: absolute;
     left: 0;
-    top: 0;
+    top: calc(50% - 50px);
     z-index: 0;
     width: 100%;
 }
