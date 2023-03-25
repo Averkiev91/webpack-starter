@@ -81,3 +81,34 @@ a {
     border: 0;
     clip: rect(0 0 0 0);
 }
+
+
+.main-title {
+    margin: 0;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 130%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-ebony);
+}
+
+.main-title--home {
+    color: var(--color-light);
+}
+
+.main-descr {
+    margin: 0;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--color-storm);
+}
+.main-descr--home {
+    margin-bottom: 32px;
+    color: var(--color-light);
+}
+
+.section-offset {
+    padding-top: 80px;
+}

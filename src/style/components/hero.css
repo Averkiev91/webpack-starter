@@ -1,5 +1,6 @@
 .hero__content {
-    max-width: 590px;
+    max-width: 680px;
+    padding-left: 60px;
 }
 .hero__next {
     position: absolute;
@@ -20,7 +21,7 @@
 .hero__pag {
     counter-reset: pag;
     left: calc((100% - 1260px) / 2) !important;
-    bottom: 120px !important;
+    bottom: 150px !important;
     display: flex;
 }
 .hero__pag .swiper-pagination-bullet {
@@ -82,13 +83,24 @@
 }
 
 .hero-slide {
-    padding-top: 220px;
-    padding-bottom: 354px;
-    background-image: url("../../img/sx-introbar-agricultural-vehicles_w960.jpg");
+    padding-top: 130px;
+    padding-bottom: 200px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: var(--color-gray);
+}
+
+.hero-slide-1 {
+    background-image: url("../../img/hero/chris-ensminger-yJDZTDeHeG8-unsplash.jpg");
+}
+
+.hero-slide-2 {
+    background-image: url("../../img/hero/loren-king-EA45-AXlvWk-unsplash.jpg");
+}
+
+.hero-slide-3 {
+    background-image: url("../../img/hero/jed-owen-ajZibDGpPew-unsplash.jpg");
 }
 
 .slider-nav {
@@ -106,17 +118,17 @@
     align-items: center;
     justify-content: center;
     border-radius: 100%;
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
     color: var(--color-gray);
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .slider-nav__btn svg {
     display: block;
-    width: 24px;
-    height: 24px;
+    fill: var(--color-light);
+    width: 54px;
+    height: 54px;
     color: inherit;
-    fill: currentColor;
     object-fit: cover;
 }
 .slider-nav__btn:focus {
