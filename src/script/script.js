@@ -34,4 +34,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    let toTop = document.querySelector('.to-top');
+    let heroHeight;
+
+    if (document.querySelector('.description')) {
+        heroHeight = document.querySelector('.description').offsetHeight;
+    }
+
+    if (document.querySelector('.brands')) {
+        heroHeight = document.querySelector('.brands').offsetHeight;
+    }
+
+    let isVisibleToTop = function isVisibleToTop() {
+        let y = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+        if (y >= heroHeight) {
+            toTop.classList.add('to-top--active');
+        } else {
+            toTop.classList.remove('to-top--active');
+        }
+    };
+
+    isVisibleToTop(window.scrollY);
+    window.addEventListener('scroll', function () {
+        let y = window.scrollY;
+        isVisibleToTop(y);
+    });
 })

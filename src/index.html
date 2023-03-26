@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="site-container">
-        <header class="header header--main">
+        <header id="page" class="header header--main">
             <div class="container header__container">
                     <a href="#" class="logo">
                         <img src="img/logo.jpg" alt="Import-detail">
@@ -215,6 +215,14 @@
         </main>
 
         <footer id="contacts" class="footer">
+            <a href="#page" data-scroll class="to-top to-top--active">
+                <span class="to-top__text">Go to top</span>
+                <span class="to-top__icon">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#to-top"></use>
+                  </svg>
+                </span>
+            </a>
             <div class="container">
                 <div class="row">
                     <div class="footer-left col-6">
