@@ -3,7 +3,7 @@
 }
 
 .work-container {
-    max-width: 1440px;
+    padding: 0 100px;
 }
 
 .work__row {
@@ -43,6 +43,10 @@
     line-height: 1.4;
 }
 
+.work-right__heading, .work-right__text {
+    max-width: 555px;
+}
+
 .work__description-bottom {
     display: flex;
     align-items: center;
@@ -62,4 +66,10 @@
     font-weight: 500;
     color: var(--color-ebony);
     line-height: 1.4;
+}
+
+@media (max-width: 1440px) {
+   .work-container {
+       padding: 50px;
+   }
 }
