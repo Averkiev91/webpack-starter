@@ -111,4 +111,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     })
 
+
+    // импортируем модуль nodemailer
+    const nodemailer = require('nodemailer');
+
+// создаем транспорт для отправки почты
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.yandex.ru',
+        port: 465,
+        secure: true,
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASSWORD,
+        },
+    });
+
+    const form = document.querySelector('.contacts-section__form')
+// обработчик отправки формы
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // отменяем стандартное поведение формы
+
+        const name = document.querySelector('.contacts-form__field').value;
+        const email = document.querySelector('.contacts-form__field').value;
+        const message = document.querySelector('.contacts-form__field').value;
+
+        // отправляем письмо
+        transporter.sendMail({
+            from: email,
+            to: 'it@ital-truck.ru', // адрес получателя
+            subject: 'Сообщение с формы обратной связи',
+            text: `Имя: ${name}\nEmail: ${email}\nСообщение: ${message}`
+        }, (error, info) => {
+            if (error) {
+                console.error(error);
+                alert('Ошибка отправки сообщения');
+            } else {
+                console.log(info.response);
+                alert('Сообщение успешно отправлено');
+            }
+        });
+    });
 })
