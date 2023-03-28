@@ -37,3 +37,23 @@
 .brands__item:not(:last-child) {
     margin-right: 25px;
 }
+
+@media (max-width: 576px) {
+    .brands {
+        padding-bottom: 15px;
+        background-image: url("../../img/background.jpg");
+    }
+    .brands__items {
+        background-color: transparent;
+    }
+    .brands:before {
+        display: none;
+    }
+    .brands__absolute {
+        position: relative;
+        top: 0;
+    }
+    .brands__item:not(:last-child) {
+        margin-right: 8px;
+    }
+}

@@ -202,6 +202,9 @@
     .hero__pag {
         left: 90px !important;
     }
+    .hero__prev, .hero__next {
+        display: none;
+    }
     .main-descr {
         font-size: 18px;
     }
@@ -216,12 +219,23 @@
     .hero__pag {
         display: none;
     }
+    .main-title {
+        font-size: 18px;
+    }
+    .main-descr {
+        font-size: 12px;
+        max-width: 380px;
+    }
 }
 
 @media (max-width: 768px) {
     .hero-slide {
         padding-top: 200px;
         padding-bottom: 200px;
+    }
+    .hero__content {
+        padding-left: 15px;
+        padding-right: 10px;
     }
 }
 @media (max-width: 576px) {

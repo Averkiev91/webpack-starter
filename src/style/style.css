@@ -36,6 +36,7 @@ body {
     margin: 0;
     font-family: "Ubuntu", sans-serif;
     font-weight: 400;
+    z-index: 1000;
 }
 
 img {
@@ -85,4 +86,16 @@ a {
 
 .section-offset {
     padding-top: 80px;
+}
+
+@media (max-width: 1024px) {
+    .section-offset {
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-offset {
+        padding-top: 15px;
+    }
 }

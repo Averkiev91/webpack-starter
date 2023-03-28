@@ -45,3 +45,18 @@
     align-items: center;
     justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+    .wonders {
+        min-height: 400px;
+    }
+    .wonders-row__heading {
+        font-size: 68px;
+    }
+}
+
+@media (max-width: 576px) {
+    .wonders-row__heading {
+        font-size: 48px;
+    }
+}

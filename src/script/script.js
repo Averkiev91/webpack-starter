@@ -95,4 +95,20 @@ document.addEventListener("DOMContentLoaded", () => {
             enScroll();
         }
     });
+
+    const navLinks = document.querySelectorAll('.nav__link');
+
+    navLinks.forEach((navLink) => {
+        navLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = navLink.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            overlay.classList.remove('overlay--active');
+            burger.classList.remove('burger--active');
+            menu.classList.remove('header__nav--active');
+            enScroll();
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    })
+
 })
