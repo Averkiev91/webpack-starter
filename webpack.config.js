@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const TerserPlugin = require('terser-webpack-plugin')
+const fs = require("fs");
 
 module.exports = {
     entry: ["@babel/polyfill", "./src/script/script.js"],
@@ -106,6 +107,14 @@ module.exports = {
     },
     resolve: {
         fallback: {
+            "fs": false,
+            "path": false,
+            "os": false,
+            "url": false,
+            tls: require.resolve('tls/'),
+            net: require.resolve('net/'),
+            "child_process": false,
+            "dns": false,
             assert: require.resolve('assert/'),
             buffer: require.resolve('buffer/'),
             console: require.resolve('console-browserify/'),
@@ -114,8 +123,8 @@ module.exports = {
             domain: require.resolve('domain-browser/'),
             http: require.resolve('stream-http/'),
             https: require.resolve('https-browserify/'),
-            os: require.resolve('os-browserify/browser'),
-            path: require.resolve('path-browserify/'),
+            //os: require.resolve('os-browserify/browser'),
+            //path: require.resolve('path-browserify/'),
             punycode: require.resolve('punycode/'),
             process: require.resolve('process/browser'),
             querystring: require.resolve('querystring-es3/'),
@@ -124,7 +133,7 @@ module.exports = {
             sys: require.resolve('util/'),
             timers: require.resolve('timers-browserify/'),
             tty: require.resolve('tty-browserify/'),
-            url: require.resolve('url/'),
+            //url: require.resolve('url/'),
             util: require.resolve('util/'),
             vm: require.resolve('vm-browserify/'),
             zlib: require.resolve('browserify-zlib'),
