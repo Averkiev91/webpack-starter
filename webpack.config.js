@@ -5,6 +5,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
+    target: 'web',
     entry: ["@babel/polyfill", "./src/script/script.js"],
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -66,34 +67,25 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
-            },
-            {
-                test: /\.(jpe?g|png|webp|gif|svg)$/i,
-                use: [
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            mozjpeg: {
-                                progressive: true,
-                            },
-                            optipng: {
-                                enabled: false,
-                            },
-                            pngquant: {
-                                quality: [0.65, 0.90],
-                                speed: 4
-                            },
-                            gifsicle: {
-                                interlaced: false,
-                            },
-                            webp: {
-                                quality: 75
-                            },
-                        }
-                    }
-                ],
-                type: 'asset/resource',
             }
         ]
+    },
+    resolve: {
+        fallback: {
+            "fs": false,
+            "tls": false,
+            "net": false,
+            "path": false,
+            "zlib": false,
+            "http": false,
+            "https": false,
+            "stream": false,
+            "crypto": false,
+            "url": false,
+            "util": false,
+            "os": false,
+            "assert": false,
+            "crypto-browserify": require.resolve('crypto-browserify')
+        }
     }
 }

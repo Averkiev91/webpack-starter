@@ -1,0 +1,105 @@
+.contacts-section {
+    padding-top: 80px;
+    padding-bottom: 77px;
+    background-image: url("../../img/contacts-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--color-ebony);
+}
+.contacts-section__form {
+    background-color: var(--color-light);
+}
+.contacts-section__container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contacts-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #e5e8ed;
+    border-radius: 4px;
+    padding: 48px 40px;
+    max-width: 495px;
+    box-shadow: 0 60px 80px -20px rgba(30, 33, 44, 0.16), 0 26px 24px -10px rgba(30, 33, 44, 0.1), 0 12px 10px -6px rgba(30, 33, 44, 0.08), 0 4px 4px -4px rgba(30, 33, 44, 0.05);
+}
+.contacts-form__title {
+    margin: 0;
+    margin-bottom: 24px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--color-ebony);
+}
+.contacts-form__field {
+    margin-bottom: 21px;
+}
+.contacts-form__checkbox {
+    margin-bottom: 22px;
+}
+.contacts-form__btn {
+    padding: 12px 31px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+@media (max-width: 576px) {
+    .contacts-form {
+        padding: 15px;
+    }
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.form-field__caption {
+    margin-bottom: 7px;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-gray);
+}
+.form-field__input {
+    border: 1px solid #d7dadd;
+    border-radius: 4px;
+    padding-left: 15px;
+    width: 260px;
+    height: 44px;
+    font-size: 14px;
+    line-height: 150%;
+}
+.form-field__input::-moz-placeholder {
+    color: #9a9ca5;
+}
+.form-field__input:-ms-input-placeholder {
+    color: #9a9ca5;
+}
+.form-field__input::placeholder {
+    color: #9a9ca5;
+}
+.form-field__input:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+.form-field__input--big {
+    padding-top: 10px;
+    height: 66px;
+    resize: none;
+}
+.form-field--big {
+    flex-grow: 1;
+}
+.form-field--big .form-field__input {
+    width: 100%;
+}
+.form-field--gray {
+    width: 100%;
+}
+.form-field--gray .form-field__input {
+    width: 100%;
+    background-color: var(--color-athens);
+}

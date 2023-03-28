@@ -7,6 +7,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Swiper, {Autoplay, Navigation, Pagination} from 'swiper';
 
+const nodemailer = require('nodemailer');
+const smtpTransport = require('nodemailer-smtp-transport');
+
 document.addEventListener("DOMContentLoaded", () => {
     const swiper = new Swiper(".hero-slider", {
         modules: [Navigation, Pagination, Autoplay],
@@ -94,5 +97,41 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             enScroll();
         }
+    });
+
+    const transporter = nodemailer.createTransport(smtpTransport({
+        host: 'smtp.yandex.ru',
+        port: 465,
+        secure: true,
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASSWORD
+        }
+    }));
+
+    const form = document.querySelector('.contacts-section__form');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // отменяем стандартное поведение формы
+
+        const name = document.querySelector('.form-field__input');
+        const email = document.querySelector('.form-field__input');
+        const message = document.querySelector('.form-field__input');
+
+        // отправляем письмо
+        transporter.sendMail({
+            from: email,
+            to: 'it@ital-truck.ru', // адрес получателя
+            subject: 'Сообщение с формы обратной связи',
+            text: `Имя: ${name}\nEmail: ${email}\nСообщение: ${message}`
+        }, (error, info) => {
+            if (error) {
+                console.error(error);
+                alert('Ошибка отправки сообщения');
+            } else {
+                console.log(info.response);
+                alert('Сообщение успешно отправлено');
+            }
+        });
     });
 })
